@@ -20,18 +20,21 @@ int main()
 		if(i == 1)	// if first line generate a space between the command prompt
 			printf("\n");
 
-
-
 		if(i <= 106)	// print the word set up to and including word 106
 			printf("%s ", word);
 
 		if(i == 106)	// after set 106 generate 16 zeros
 		{
-			for(zeroCounter = 1; zeroCounter <= 16; zeroCounter++)
-				printf("0 ");
+			for(zeroCounter = 1; zeroCounter <= 16 && i < 123; zeroCounter++, i++)
+			{
+				if(i < 122)
+					printf("0 ");
+				else
+					printf("0");
+			}
 
 			printf("\n\n");
-			
+
 			i = 0;	// reset i for next word set
 		}
 	}
