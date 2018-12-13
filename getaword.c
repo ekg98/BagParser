@@ -9,7 +9,14 @@ int getaword(char *word, int lim)
 	char *w = word;
 
 	while(isspace(c = getch()))
-		;
+	{
+		if(c == '\n')
+		{
+			*w++ = c;
+			*w = '\0';
+			return word[0];
+		}
+	}
 
 	if(c != EOF)
 		*w++ = c;
